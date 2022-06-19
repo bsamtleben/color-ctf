@@ -1,0 +1,16 @@
+[Unit]
+Description=Apache HTTP Server
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=forking
+Environment=APACHE_STARTED_BY_SYSTEMD=true
+ExecStart=/usr/local/bin/apachectl -k start
+ExecStop=/usr/local/bin/apachectl -k graceful-stop
+ExecReload=/usr/local/bin/apachectl -k graceful
+KillMode=mixed
+PrivateTmp=true
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
