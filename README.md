@@ -1,4 +1,4 @@
-![COLOR CTF](logo/logo.svg)
+![COLOR CTF](logo/logo.png)
 
 ## About
 
