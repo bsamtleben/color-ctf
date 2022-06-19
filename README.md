@@ -1,0 +1,1 @@
+![COLOR CTF](logo.svg)
