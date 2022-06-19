@@ -48,5 +48,5 @@ reset <machine>
 
 |                                     | Machine name       | Difficulty |
 | ---                                 | ---                | ---        |
-| ![aqua](logo/icon/aqua.png)         | aqua               | easy       |
+| ![aqua](logo/icons/aqua.png)         | aqua               | easy       |
 
