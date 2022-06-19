@@ -38,15 +38,15 @@ The creation of the virtual machine will take a few minutes. You might want to t
 | `stop <machine>` | Stop a running machine |
 | `reset <machine>` | Reset a machine to its initial state |
 
-## Machines
-
-| | Machine name | Difficulty |
-| --- | --- | --- |
-| ![aqua](logo/icons/aqua.png) | aqua | easy |
-
 ## Troubleshooting
 
 **Spoiler alert:** There is no debug output when the virtual machines are provisioned since this will provide a lot of information about the setup of the machines and could reveal how to solve them.
 
 Nevertheless, if a machine cannot be started or stopped and the error message is not helpful, you can check the log file stored at `machines/vagrant.log`. Just be aware that it *might* contain spoilers.
+
+## Machines
+
+| | Machine name | Difficulty |
+| --- | --- | --- |
+| ![aqua](logo/icons/aqua.png) | aqua | easy |
 
