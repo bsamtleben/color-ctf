@@ -1,0 +1,198 @@
+#!/usr/bin/env python3
+
+import os
+from pathlib import Path
+import re
+import sys
+import shutil
+import subprocess
+
+# +++ CONSTANTS ++++++++++++++++++++++++++++++++
+
+machines = {
+    "aqua": "192.168.60.2"
+}
+
+# Script directory
+script_dir = Path(__file__).parent
+
+# Location of logfile
+logfile = script_dir / "machines" / "vagrant.log"
+
+
+# +++ OUTPUT FUNCTIONS +++++++++++++++++++++++++
+
+def print_banner():
+    print("""
+
+ ██████╗ ██████╗ ██╗      ██████╗ ██████╗      ██████╗████████╗███████╗
+██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗    ██╔════╝╚══██╔══╝██╔════╝
+██║     ██║   ██║██║     ██║   ██║██████╔╝    ██║        ██║   █████╗
+██║     ██║   ██║██║     ██║   ██║██╔══██╗    ██║        ██║   ██╔══╝
+╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║    ╚██████╗   ██║   ██║
+ ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝     ╚═════╝   ╚═╝   ╚═╝
+""")
+
+def print_usage():
+    print("""
+There are the following commands:
+    status                      - List info about all machines
+    start <machine>             - Start a machine
+    stop  <machine>             - Stop a machine
+    reset <machine>             - Reset a machine
+""")
+    print_machines()
+
+def print_machines():
+    print("The following machines are available:")
+    for machine_name in machines:
+        print(f"    {machine_name}")
+
+
+def print_machine_startup(machine_name):
+    print(f"""
+Your machine is up and running!
+IP address: {machines[machine_name]}
+Happy hacking!
+""")
+
+# +++ HANDLERS  ++++++++++++++++++++++++++++++++
+
+def status():
+    vagrant = subprocess.run(["vagrant", "global-status", "--prune"], capture_output=True, text=True)
+
+    if vagrant.returncode != 0:
+        print("Failed to fetch vagrant status.")
+        sys.exit(1)
+
+    # Get stdout, combine multiple consecutive spaces into one
+    vagrant_output = re.sub("  +", " ", vagrant.stdout)
+    # Split at newline and remove header
+    vagrant_output = vagrant_output.split("\n")[2:]
+
+    # Extract only the important information from each line
+    machine_states = {}
+    for line in vagrant_output:
+        line_info = line.strip().split(" ")
+
+        # Valid lines look like this:
+        # 4f1f4f9 default virtualbox poweroff /home/user/default
+
+        # Stop at the first invalid line
+        if len(line_info) != 5:
+            break
+
+        # Extract state and add to dictionary
+        machine_states[line_info[1]] = line_info[3]
+
+    print('{:<20} {:<20} {:>20}\n'.format("Machine", "State", "IP address"))
+    print('--------------------------------------------------------------')
+
+    for machine_name, machine_ip in machines.items():
+
+        # Get machine state if it exists
+        machine_state = "not created"
+        if machine_name in machine_states: machine_state = machine_states[machine_name]
+
+        # Only print the IP address when the machine is online to avoid confusion
+        if machine_state != "running":
+            machine_ip = "-"
+
+        print('{:<20} {:<20} {:>20}\n'.format(machine_name, machine_state, machine_ip))
+
+
+def start(machine_name):
+    print(f"Starting machine {machine_name}...")
+    print("This might take a while if you start the machine for the first time or after a reset.")
+    print("So don't worry if this screen appears to be stuck...")
+    print("Feel free to grab a coffee and return in a few minutes!")
+
+    run_vagrant("up", machine_name)
+    print_machine_startup(machine_name)
+
+
+def stop(machine_name):
+
+    print(f"Stopping machine {machine_name}...")
+    run_vagrant("halt", machine_name)
+    print("Machine stopped successfully.")
+
+def reset(machine_name):
+    stop(machine_name)
+    print(f"Removing machine {machine_name}...")
+    run_vagrant("destroy", "--force", machine_name)
+    print("Machine removed successfully.")
+
+def run_vagrant(command, *args):
+
+    # Run vagrant command and redirect output to logfile
+    with open(logfile, "w") as log:
+        vagrant = subprocess.run(["vagrant", command, *args], cwd=script_dir / "machines",stdout=log)
+
+        if vagrant.returncode != 0:
+            print(f"""
+Something went wrong while executing a Vagrant command.
+You can check the most recent log in: {logfile}
+CAUTION: The log might contain spoilers for solving the machine.""")
+            sys.exit(1)
+
+# +++ VALIDATION  ++++++++++++++++++++++++++++++
+
+def check_prerequisites():
+    if shutil.which("vagrant") is None:
+        print("Error: Could not find vagrant executable.")
+        print("Please make sure that Vagrant and VirtualBox are installed and added to the PATH.")
+        sys.exit(1)
+
+def check_machine_name(machine_name):
+    if machine_name not in machines:
+        print(f"Invalid machine name provided: {machine_name}")
+        print_machines()
+        sys.exit(1)
+
+# +++ MAIN +++++++++++++++++++++++++++++++++++++
+
+def main():
+
+    # Default greeting banner
+    print_banner()
+
+    # Make sure that all requirements are installed before proceeding
+    check_prerequisites()
+
+    # Available commands
+    commands = {
+        "status": {"handler": status, "argc": 0},
+        "start":  {"handler": start,  "argc": 1},
+        "stop":   {"handler": stop,   "argc": 1},
+        "reset":  {"handler": reset,  "argc": 1},
+    }
+
+    # Check that a command is provided
+    if len(sys.argv) >= 2:
+
+        # Check that the command is valid
+        command = sys.argv[1].lower()
+        if (command in commands):
+
+            # Retrieve command info and check that there are a valid number of parameters
+            command_info = commands[command]
+            if (len(sys.argv) == command_info["argc"] + 2):
+
+                # Pass parameters to handler
+                if command_info["argc"] == 0:
+                    # No parameters needed
+                    command_info["handler"]()
+                else:
+                    # First argument to any command must be a valid machine name
+                    check_machine_name(sys.argv[2])
+                    command_info["handler"](sys.argv[2])
+
+                return
+
+    # Something was invalid - print help
+    print_usage()
+
+if __name__ == "__main__":
+    main()
+
