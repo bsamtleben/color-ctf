@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AQUA Design Studios</title>
-
     <link rel="stylesheet" href="assets/css/main.css">
 <body>
     <nav>
@@ -15,10 +14,10 @@
             <svg class="closeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z"/></svg>
         </button>
         <ul>
-            <a class="scrollLink" scrolllink="#about">About</a
-            ><a class="scrollLink" scrolllink="#vision">Vision</a
-            ><a class="scrollLink" scrolllink="#download">Download</a
-            ><a class="scrollLink" scrolllink="#contact">Contact</a>
+            <a class="scrollLink" scrolllink="#about">About</a>
+            <a class="scrollLink" scrolllink="#vision">Vision</a>
+            <a class="scrollLink" scrolllink="#download">Download</a>
+            <a class="scrollLink" scrolllink="#contact">Contact</a>
         </ul>
     </nav>
     <header id="header">
@@ -28,7 +27,7 @@
             <a scrolllink="#about" class="learnMore scrollLink">Learn More</a>
         </ul>
     </header>
-    
+
     <section id="about">
         <h1 class="headerLine">What We Do</h1>
         <div class="lineContainer"><div class="line"></div></div>
@@ -36,7 +35,7 @@
         <br>
         <a scrolllink="#vision" class="learnMore scrollLink">Learn More</a>
     </section>
-    
+
     <section id="vision">
         <h1 class="headerLine">Our Vision</h1>
         <div class="lineContainer"><div class="line"></div></div>
@@ -58,7 +57,7 @@
             </div>
         </div>
     </section>
-    
+
     <section id="download">
         <h1 class="headerLine">Try Aqua Now!</h1>
         <div class="lineContainer"><div class="line"></div></div>
@@ -84,7 +83,7 @@
             </li>
         </ul>
     </section>
-    
+
     <footer>
         <ul class="links">
             <a href="#">
@@ -103,7 +102,7 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.easing.min.js"></script>
     <script>
-    
+
     // Nav Header Class Type Checking (nav has white background when not on top of page)
     window.onscroll = checkNavClassNameHeaderType;
     window.onload = checkNavClassNameHeaderType;
