@@ -32,6 +32,14 @@ EOF
     list_machines
 }
 
+check_prerequisites() {
+    if [[ ! "$(which vagrant)" ]]; then
+        echo "Error: Could not find vagrant executable."
+        echo "Please make sure that Vagrant and VirtualBox are installed and added to the PATH variable."
+        exit 1
+    fi
+}
+
 list_machines() {
     echo "The following machines are available:"
     for m in "${!MACHINES[@]}"; do
@@ -114,6 +122,7 @@ check_machine_name() {
 
 # MAIN
 banner
+check_prerequisites
 
 case "$1" in
 "status")
