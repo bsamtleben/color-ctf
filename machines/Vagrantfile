@@ -1,0 +1,46 @@
+# Directory where files are copied
+$FILES_DIR = "/home/vagrant/files"
+
+Vagrant.configure("2") do |config|
+
+
+  # General VM configuration
+  config.vm.provider "virtualbox" do |vb|
+
+    # Disable GUI
+    vb.gui = false
+
+    # Limit resources
+    vb.memory = 2048
+    vb.cpus = 4
+  end
+
+  # Default shared folder - disabled to prevent access to setup files
+  config.vm.synced_folder '.', '/vagrant', disabled: true
+
+  config.vm.define "aqua" do |aqua|
+
+    aqua.vm.box = "debian/bullseye64"
+    aqua.vm.hostname = "aqua"
+
+    aqua.vm.provider "virtualbox" do |vb|
+      vb.name = "aqua"
+    end
+
+    aqua.vm.network "private_network", ip: "192.168.60.2"
+
+    # Copy needed files to host
+    aqua.vm.provision "file", source: "aqua/files", destination: $FILES_DIR
+
+    # Run initialization script
+    aqua.vm.provision "shell", path: "aqua/init.bash", env: { "FILES_DIR" => $FILES_DIR }
+
+    # Remove files
+    aqua.vm.provision "shell", inline: "rm -r $1", args: $FILES_DIR
+
+  end
+
+  # General initialization for all machines
+  config.vm.provision "shell", path: "_general/init.bash"
+
+end
