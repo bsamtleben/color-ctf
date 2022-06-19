@@ -20,7 +20,7 @@
 # On Windows
 ./color-ctf.cmd start <machine>
 ```
-The creation of the virtual machine might take some minutes. You might want to take a quick break right now.
+The creation of the virtual machine will take a few minutes. You might want to take a quick break right now.
 
 3. When the machine is up and running, the script will print the local IP address of the machine.
 4. That's it! You can now start scanning the host for vulnerabilities. Happy hacking!
@@ -33,7 +33,7 @@ The creation of the virtual machine might take some minutes. You might want to t
 
 | Command | Explanation |
 | --- | --- |
-| `status` | List all machines, their status and IP addresses |
+| `status` | List all machines, their status and IP address |
 | `start <machine>` | Start a machine |
 | `stop <machine>` | Stop a running machine |
 | `reset <machine>` | Reset a machine to its initial state |
@@ -43,4 +43,10 @@ The creation of the virtual machine might take some minutes. You might want to t
 | | Machine name | Difficulty |
 | --- | --- | --- |
 | ![aqua](logo/icons/aqua.png) | aqua | easy |
+
+## Troubleshooting
+
+**Spoiler alert:** There is no debug output when the virtual machines are provisioned since this will provide a lot of information about the setup of the machines and could reveal how to solve them.
+
+Nevertheless, if a machine cannot be started or stopped and the error message is not helpful, you can check the log file stored at `machines/vagrant.log`. Just be aware that it *might* contain spoilers.
 
