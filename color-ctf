@@ -30,8 +30,7 @@ def print_banner():
 """)
 
 def print_usage():
-    print("""
-There are the following commands:
+    print("""There are the following commands:
     status                      - List info about all machines
     start <machine>             - Start a machine
     stop  <machine>             - Stop a machine
