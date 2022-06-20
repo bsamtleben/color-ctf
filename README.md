@@ -8,7 +8,7 @@
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads). This software is needed to create virtual machines.
 2. Install [Vagrant](https://www.vagrantup.com/downloads). This software is used to manage the virtual machines.
-3. Install [Python 3](https://www.python.org/downloads/). Make sure that you can execute `python3` in your terminal.
+3. Install [Python 3](https://www.python.org/downloads/). Make sure that you can execute `python` or `python3` in your terminal.
 4. Clone this Git repository into a folder of your choice.
 
 ## Getting started
@@ -18,10 +18,12 @@
 ```bash
 python3 color-ctf start <machine>
 ```
-The creation of the virtual machine will take a few minutes. This is the right moment to take a quick break.
+The creation of the virtual machine will take several minutes. This is the right moment to take a quick break.
 
 3. As soon as the machine is up and running, the script will print the local IP address of the machine.
 4. That's it! You can now start scanning the host for vulnerabilities. Happy hacking!
+
+> When you're done, make sure to stop the machine via `python3 color-ctf stop <machine>`.
 
 ## Command reference
 
