@@ -110,13 +110,11 @@ def start(machine_name):
 
 
 def stop(machine_name):
-
     print(f"Stopping machine {machine_name}...")
     run_vagrant("halt", machine_name)
     print("Machine stopped successfully.")
 
 def reset(machine_name):
-    stop(machine_name)
     print(f"Removing machine {machine_name}...")
     run_vagrant("destroy", "--force", machine_name)
     print("Machine removed successfully.")
