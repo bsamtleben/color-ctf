@@ -48,6 +48,6 @@ Nevertheless, if a machine cannot be started or stopped and the error message is
 
 | | Machine name | Difficulty |
 | --- | --- | --- |
-|  | **kali** | (attacking machine) |
+|  | *kali* | (attacking machine) |
 | ![aqua](logo/icons/aqua.png) | aqua | easy |
 
