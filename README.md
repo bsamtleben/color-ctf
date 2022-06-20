@@ -15,17 +15,17 @@
 
 1. **Start your Kali Linux attack machine**
    1. Open a terminal in the repository folder and run the following command:
-```bash
-python3 color-ctf start kali
-```
+      ```bash
+      python3 color-ctf start kali
+      ```
    2. The creation of the virtual machine will take several minutes. This is the right moment to take a quick break.
    3. As soon as the setup script is finished, you can log into the machine with the provided credentials.
 2. **Start a vulnerable machine that you want to attack**
-   1. Pick a machine from [this list below](#machines), for example `aqua`.
+   1. Pick a machine from [the list below](#machines), for example `aqua`.
    2. Run the following command in your terminal:
-```bash
-python3 color-ctf start <machine>
-```
+      ```bash
+      python3 color-ctf start <machine>
+      ```
    3. As soon as the machine is up and running, the script will print the local IP address of the machine.
 3. That's it! You can now use you Kali machine to start scanning for vulnerabilities. Happy hacking!
 
