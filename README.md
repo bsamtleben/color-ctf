@@ -26,8 +26,9 @@
       ```bash
       python3 color-ctf start <machine>
       ```
-   3. As soon as the machine is up and running, the script will print the local IP address of the machine.
-3. That's it! You can now use you Kali machine to start scanning for vulnerabilities. Happy hacking!
+   3. As soon as the machine is up and running, the script will provide you with the local IP address.
+3. **That's it!**
+   You can now use your Kali Linux machine to start scanning for vulnerabilities. Happy hacking!
 
 > When you're done, make sure to stop both machines via `python3 color-ctf stop <machine>`.
 
