@@ -59,6 +59,8 @@ Happy hacking!
 # +++ HANDLERS  ++++++++++++++++++++++++++++++++
 
 def status():
+    print("Querying machine status...")
+
     vagrant = subprocess.run(["vagrant", "global-status", "--prune"], capture_output=True, text=True)
 
     if vagrant.returncode != 0:
@@ -85,7 +87,7 @@ def status():
         # Extract state and add to dictionary
         machine_states[line_info[1]] = line_info[3]
 
-    print('{:<20} {:<20} {:>20}\n'.format("Machine", "State", "IP address"))
+    print('\n{:<20} {:<20} {:>20}'.format("Machine", "State", "IP address"))
     print('--------------------------------------------------------------')
 
     for machine_name, machine_ip in machines.items():
