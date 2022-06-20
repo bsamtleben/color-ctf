@@ -51,5 +51,5 @@ Nevertheless, if a machine cannot be started or stopped and the error message is
 **Vulnerable machines:**
 | | Machine name | Difficulty |
 | --- | --- | --- |
-| ![aqua](logo/icons/aqua.png) | `aqua` | easy |
+| ![aqua](logo/icons/aqua.svg) | `aqua` | easy |
 
