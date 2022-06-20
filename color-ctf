@@ -10,7 +10,8 @@ import subprocess
 # +++ CONSTANTS ++++++++++++++++++++++++++++++++
 
 machines = {
-    "aqua": "192.168.60.2"
+    "kali": "192.168.60.2",
+    "aqua": "192.168.60.3",
 }
 
 # Script directory
@@ -95,7 +96,7 @@ def status():
         if machine_state != "running":
             machine_ip = "-"
 
-        print('{:<20} {:<20} {:>20}\n'.format(machine_name, machine_state, machine_ip))
+        print('{:<20} {:<20} {:>20}'.format(machine_name, machine_state, machine_ip))
 
 
 def start(machine_name):

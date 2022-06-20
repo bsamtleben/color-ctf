@@ -1,46 +1,87 @@
+# CONFIGURABLE VALUES
+
+$VM_MEMORY = 2048
+$VM_CPUS = 4
+
+$KALI_MEMORY = 6144
+$KALI_CPUS = 6
+
+# CONSTANTS
+
 # Directory where files are copied
 $FILES_DIR = "/home/vagrant/files"
 
-Vagrant.configure("2") do |config|
-
-
-  # General VM configuration
-  config.vm.provider "virtualbox" do |vb|
-
-    # Disable GUI
-    vb.gui = false
-
-    # Limit resources
-    vb.memory = 2048
-    vb.cpus = 4
+# A little bit of Ruby code to define machines easily
+class Machine
+  def initialize(name, box, ip)
+    @name = name
+    @box = box
+    @ip = ip
   end
+  def name
+    @name
+  end
+  def box
+    @box
+  end
+  def ip
+    @ip
+  end
+end
+
+$MACHINES = [
+    Machine.new("aqua", "debian/bullseye64", "192.168.60.3"),
+]
+
+Vagrant.configure("2") do |config|
 
   # Default shared folder - disabled to prevent access to setup files
   config.vm.synced_folder '.', '/vagrant', disabled: true
 
-  config.vm.define "aqua" do |aqua|
-
-    aqua.vm.box = "debian/bullseye64"
-    aqua.vm.hostname = "aqua"
-
-    aqua.vm.provider "virtualbox" do |vb|
-      vb.name = "aqua"
+  # KALI ATTACKING MACHINE
+  config.vm.define "kali" do |kali|
+    kali.vm.box = "kalilinux/rolling"
+    kali.vm.hostname = "kali"
+    kali.vm.provider "virtualbox" do |vb|
+      vb.name = "kali-color"
+      vb.gui = true
+      vb.memory = $KALI_MEMORY
+      vb.cpus = $KALI_CPUS
     end
-
-    aqua.vm.network "private_network", ip: "192.168.60.2"
-
-    # Copy needed files to host
-    aqua.vm.provision "file", source: "aqua/files", destination: $FILES_DIR
-
-    # Run initialization script
-    aqua.vm.provision "shell", path: "aqua/init.bash", env: { "FILES_DIR" => $FILES_DIR }
-
-    # Remove files
-    aqua.vm.provision "shell", inline: "rm -r $1", args: $FILES_DIR
-
+    kali.vm.network "private_network", ip: "192.168.60.2"
   end
 
-  # General initialization for all machines
-  config.vm.provision "shell", path: "_general/init.bash"
+  # VULNERABLE CTF MACHINES
+
+  $MACHINES.each do |machine|
+    config.vm.define machine.name do |m|
+
+      m.vm.box = machine.box
+      m.vm.hostname = machine.name
+      m.vm.provider "virtualbox" do |vb|
+        vb.name = machine.name
+        # Disable GUI
+        vb.gui = false
+        # Limit resources
+        vb.memory = $VM_MEMORY
+        vb.cpus = $VM_CPUS
+      end
+
+      m.vm.network "private_network", ip: machine.ip
+
+      # General initialization for all machines
+      m.vm.provision "shell", path: "_general/init.bash"
+
+      # Copy needed files to host
+      m.vm.provision "file", source: "#{machine.name}/files", destination: $FILES_DIR
+
+      # Run initialization script
+      m.vm.provision "shell", path: "#{machine.name}/init.bash", env: { "FILES_DIR" => $FILES_DIR }
+
+      # Remove files
+      m.vm.provision "shell", inline: "rm -r $1", args: $FILES_DIR
+    end
+
+  end
 
 end
