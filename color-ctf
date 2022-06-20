@@ -24,13 +24,9 @@ logfile = script_dir / "machines" / "vagrant.log"
 
 def print_banner():
     print("""
-
- ██████╗ ██████╗ ██╗      ██████╗ ██████╗      ██████╗████████╗███████╗
-██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗    ██╔════╝╚══██╔══╝██╔════╝
-██║     ██║   ██║██║     ██║   ██║██████╔╝    ██║        ██║   █████╗
-██║     ██║   ██║██║     ██║   ██║██╔══██╗    ██║        ██║   ██╔══╝
-╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║    ╚██████╗   ██║   ██║
- ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝     ╚═════╝   ╚═╝   ╚═╝
+╔═╗╔═╗╦  ╔═╗╦═╗  ╔═╗╔╦╗╔═╗
+║  ║ ║║  ║ ║╠╦╝  ║   ║ ╠╣
+╚═╝╚═╝╩═╝╚═╝╩╚═  ╚═╝ ╩ ╚
 """)
 
 def print_usage():
@@ -59,7 +55,7 @@ Happy hacking!
 # +++ HANDLERS  ++++++++++++++++++++++++++++++++
 
 def status():
-    print("Querying machine status...")
+    print("Querying machine states...")
 
     vagrant = subprocess.run(["vagrant", "global-status", "--prune"], capture_output=True, text=True)
 
