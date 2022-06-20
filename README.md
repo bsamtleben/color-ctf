@@ -46,8 +46,10 @@ Nevertheless, if a machine cannot be started or stopped and the error message is
 
 ## Machines
 
+**Attacking machine:** `kali`
+
+**Vulnerable machines:**
 | | Machine name | Difficulty |
 | --- | --- | --- |
-|  | *kali* | (attacking machine) |
-| ![aqua](logo/icons/aqua.png) | aqua | easy |
+| ![aqua](logo/icons/aqua.png) | `aqua` | easy |
 
