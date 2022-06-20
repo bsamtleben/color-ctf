@@ -141,7 +141,7 @@ def start_machine(machine_name):
     print(f"""Starting machine {machine_name}...
 This might take a while if you start the machine for the first time or after a reset.
 There is no live output since any information on the setup might spoil the challenge.
-So don't worry if this screen appears to be stuck...")
+So don't worry if this screen appears to be stuck.
 Feel free to grab a coffee and return in a few minutes!""")
     run_vagrant("up", machine_name)
     print_machine_startup(machine_name)
