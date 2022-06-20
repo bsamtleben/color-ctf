@@ -13,17 +13,23 @@
 
 ## Getting started
 
-1. Pick a machine from [this list below](#machines), for example `aqua`.
-2. Open a terminal in the repository folder and run the following command:
+1. **Start your Kali Linux attack machine**
+   1. Open a terminal in the repository folder and run the following command:
+```bash
+python3 color-ctf start kali
+```
+   2. The creation of the virtual machine will take several minutes. This is the right moment to take a quick break.
+   3. As soon as the setup script is finished, you can log into the machine with the provided credentials.
+2. **Start a vulnerable machine that you want to attack**
+   1. Pick a machine from [this list below](#machines), for example `aqua`.
+   2. Run the following command in your terminal:
 ```bash
 python3 color-ctf start <machine>
 ```
-The creation of the virtual machine will take several minutes. This is the right moment to take a quick break.
+   3. As soon as the machine is up and running, the script will print the local IP address of the machine.
+3. That's it! You can now use you Kali machine to start scanning for vulnerabilities. Happy hacking!
 
-3. As soon as the machine is up and running, the script will print the local IP address of the machine.
-4. That's it! You can now start scanning the host for vulnerabilities. Happy hacking!
-
-> When you're done, make sure to stop the machine via `python3 color-ctf stop <machine>`.
+> When you're done, make sure to stop both machines via `python3 color-ctf stop <machine>`.
 
 ## Command reference
 
@@ -42,14 +48,12 @@ Run a command: `python3 color-ctf <command>`
 
 **Spoiler alert:** There is no debug output when the virtual machines are provisioned since this would provide a lot of information about the setup of the machines and could reveal how to solve them.
 
-Nevertheless, if a machine cannot be started or stopped and the error message is not helpful, you can check the log file stored at `machines/vagrant.log`. Just be aware that it *might* contain spoilers.
+Nevertheless, if a machine cannot be started or stopped and the error message is not helpful, you can check the log file stored at `machines/vagrant.log`. Just be aware that it might contain spoilers.
 
 ## Machines
 
-**Attacking machine:** `kali`
-
-**Vulnerable machines:**
-| | Machine name | Difficulty |
-| --- | --- | --- |
-| ![aqua](logo/icons/aqua.svg) | `aqua` | easy |
+| | Machine name | Difficulty | Remarks |
+| --- | --- | --- | --- |
+|  | kali | - | Kali Linux attack machine |
+| ![aqua](logo/icons/aqua.svg) | aqua | easy | |
 
