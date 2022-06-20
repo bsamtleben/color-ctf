@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 HOME_DIR="/home/$USERNAME"
-DESKTOP_DIR="$HOME_DIR/Desktop"
 
 # Update everything
 export DEBIAN_FRONTEND=noninteractive
