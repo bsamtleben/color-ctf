@@ -1,7 +1,5 @@
 #!/bin/bash
 
-KEYBOARD_FILE=/etc/default/keyboard
-
 HOME_DIR="/home/$USERNAME"
 DESKTOP_DIR="$HOME_DIR/Desktop"
 
@@ -12,10 +10,7 @@ echo "grub-pc hold" | sudo dpkg --set-selections
 apt-get update && apt-get -y dist-upgrade && apt-get -y autoremove
 
 # Set correct keyboard layout
-sed -ie '/^XKBMODEL=/s/".*"/"'$XKBMODEL'"/' $KEYBOARD_FILE
-sed -ie '/^XKBLAYOUT=/s/".*"/"'$XKBLAYOUT'"/' $KEYBOARD_FILE
-sed -ie '/^XKBVARIANT=/s/".*"/"'$XKBVARIANT'"/' $KEYBOARD_FILE
-udevadm trigger --subsystem-match=input --action=change
+setxkbmap -model $XKBMODEL -layout $XKBLAYOUT -variant $XKBVARIANT
 
 # Set time zone
 timedatectl set-timezone $TIMEZONE
