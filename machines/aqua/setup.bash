@@ -1,10 +1,27 @@
 #!/usr/bin/env bash
 
+TOKEN1='AQUA{r3m0te_b4ckd00rz_ar3_aw3s0me}'
+TOKEN2='AQUA{w0rld_wr1t4ble_f1l3z_c4n_be_h3lpful}'
+
 # This script performs the following steps:
+#   0. Place the tokens
 #   1. Download and build Apache HTTP Server from source
 #   2. Download and build vulnerable PHP 8.1.0-dev from source
 #   3. Set up a static PHP website and start Apache
+#   4. Create a world-writable script that restarts Apache and can be run by anyone via sudo
 
+# Create non-root user (without password since the user won't need to login)
+useradd -m "aqua" -s /bin/bash
+
+# Put the first token in the user's home directory
+HOME_DIR=/home/aqua/
+echo "Hello there! This one is for you: $TOKEN1" > $HOME_DIR/token
+chown -R aqua:aqua $HOME_DIR
+chmod 755 $HOME_DIR
+chmod 644 $HOME_DIR/token
+
+# Put the second token in root's home directory
+echo "Nice job! Looks like you deserve this token: $TOKEN2" > /root/token
 
 # Apache HTTP server source code can be downloaded from here: https://httpd.apache.org/download.cgi
 HTTPD_VERSION=2.4.54
@@ -68,3 +85,21 @@ cp $FILES_DIR/apache2.service /etc/systemd/system/apache2.service
 systemctl daemon-reload
 systemctl enable apache2.service
 systemctl start apache2.service
+
+# Create bash script that can be used for privilege escalation
+cat <<EOF > /opt/restart-apache
+#!/bin/bash
+
+# Sometimes Apache just stops working...
+# This script simply restarts the web server.
+
+echo "Restarting Apache. This might take a moment..."
+systemctl restart apache2.service
+echo "Done!"
+EOF
+
+# Make the script world-writable
+chmod 777 /opt/restart-apache
+
+# Let anyone execute the script via sudo
+echo "ALL ALL=NOPASSWD: /opt/restart-apache" >> /etc/sudoers

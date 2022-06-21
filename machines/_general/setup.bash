@@ -16,3 +16,6 @@ apt-get update && apt-get upgrade -y && apt-get -y autoremove
 
 # Install tools for convenience
 apt-get install -y vim
+
+# Make vagrant home directory NOT world readable
+chmod 750 /home/vagrant
