@@ -22,7 +22,6 @@ timedatectl set-timezone $TIMEZONE
 useradd -m "$USERNAME" -s /usr/bin/zsh
 echo "$USERNAME:$PASSWORD" | chpasswd
 usermod -a -G sudo "$USERNAME"
-chown -R "$USERNAME":"$USERNAME" "$HOME_DIR"
 
 # ZSH configuration
 cat <<EOF > "$HOME_DIR/.zshrc-custom"
