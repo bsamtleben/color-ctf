@@ -48,6 +48,9 @@ make install
 # Create php.ini
 cp /opt/php/php.ini-production /usr/local/lib/php.ini
 
+# Cleanup
+rm -rf /opt/php /opt/httpd
+
 # Configure Apache
 HTTPD_CONF=/usr/local/conf/httpd-php.conf
 cp $FILES_DIR/httpd-php.conf $HTTPD_CONF
