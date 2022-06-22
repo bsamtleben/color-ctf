@@ -71,8 +71,17 @@ Happy hacking!
 def status():
     print("Querying machine states...")
 
-    vagrant = subprocess.run(["vagrant", "global-status", "--prune"], capture_output=True, text=True)
+    # Run vagrant global-status twice, first time with --prune (not cached, time-consuming)
+    # Running it only once (with --prune) does not return the correct results when the machine
+    # was stopped externally (via VirtualBox UI or reboot).
+    # It seems quite weird to me - but at least there is this workaround...
 
+    vagrant = subprocess.run(["vagrant", "global-status", "--prune"], capture_output=True, text=True)
+    if vagrant.returncode != 0:
+        print("Failed to fetch vagrant status.")
+        sys.exit(1)
+
+    vagrant = subprocess.run(["vagrant", "global-status"], capture_output=True, text=True)
     if vagrant.returncode != 0:
         print("Failed to fetch vagrant status.")
         sys.exit(1)
