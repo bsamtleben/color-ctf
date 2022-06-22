@@ -56,5 +56,6 @@ Nevertheless, if a machine cannot be started or stopped and the error message is
 | | Machine name | Difficulty | Remarks |
 | --- | --- | --- | --- |
 |  | kali | - | Kali Linux attack machine |
-| ![aqua](logo/icons/aqua.svg) | aqua | easy | |
+| ![aqua](logo/icons/aqua.svg) | aqua | very easy | |
+| ![emerald](logo/icons/emerald.svg) | emerald | easy | |
 
