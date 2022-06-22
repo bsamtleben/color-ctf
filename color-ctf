@@ -14,6 +14,7 @@ kali_machine = "kali"
 machines = {
     kali_machine:   "192.168.60.2",
     "aqua":         "192.168.60.3",
+    "emerald":      "192.168.60.4",
 }
 
 # Script directory
