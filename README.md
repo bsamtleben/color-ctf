@@ -1,6 +1,6 @@
 ![COLOR CTF](logo/logo.svg)
 
-## Intro
+## Overview
 
 You would like to solve capture-the-flag challenges and don't know where to start? If that's the case, Color CTF might be something for you!
 
