@@ -8,13 +8,13 @@ We've assembled a collection of vulnerable Linux machines that you can try to ge
 
 In other words: *It's just a typical CTF, isn't it?* Well, not completely! Here are some points that might convince you:
 
-**Self-contained and simple:** Manage everything in just a few steps: One command to start your preconfigured Kali Linux attacker machine... a second command to boot up a target machine... that's it! You can put on your hoodie and start scanning for vulnerabilities!
+**Self-contained and simple:** Manage everything in just a few steps: One command to start your preconfigured Kali Linux attacker machine... a second command to boot up a target machine... that's it! You can already start scanning for vulnerabilities!
 
 **Beginner-friendly challenges:** We've got various machines in rising levels of difficulty. Can you solve them all?
 
 **Cross-platform:** The setup works on Windows and Linux, so you can stay on you favorite operating system!
 
-> **Disclaimer:** The challenges and demonstrated techniques are intended for educational purposes only. The author does not endorse any illegal actions.
+Sound's interesting? Well, then just put on your hoodie and get started! Happy hacking!
 
 ## Prerequisites
 
@@ -71,3 +71,6 @@ Nevertheless, if a machine cannot be started or stopped and the error message is
 | ![aqua](logo/icons/aqua.svg) | aqua | easy | |
 | ![emerald](logo/icons/emerald.svg) | emerald | easy | |
 
+---
+
+> **Disclaimer:** The challenges and demonstrated techniques are intended for educational purposes only. The author does not endorse any illegal actions.
