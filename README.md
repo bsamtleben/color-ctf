@@ -72,4 +72,5 @@ Nevertheless, if a machine cannot be started or stopped and the error message is
 | ![emerald](logo/icons/emerald.svg) | emerald | easy | |
 
 
-> **Disclaimer:** All challenges and demonstrated techniques are intended for educational purposes only. The author does not endorse any illegal actions.
+## Disclaimer
+> All challenges and demonstrated techniques are intended for educational purposes only. The author does not endorse any illegal actions.
