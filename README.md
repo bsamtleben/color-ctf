@@ -1,8 +1,20 @@
 ![COLOR CTF](logo/logo.svg)
 
-## About
+## Overview
 
-> TO BE DONE
+You would like to solve capture-the-flag challenges and don't know where to start? If that's the case, Color CTF might be something for you!
+
+We've assembled a collection of vulnerable Linux machines that you can try to get into. The task is always the same: Retrieve the two tokens hidden inside the machine. To find them, you will have to identify and exploit vulnerabilities until you finally gain root access.
+
+In other words: *It's just a typical CTF, isn't it?* - Well, not completely! Here are some points that might convince you:
+
+**Self-contained and simple:** Everything requires very few steps: One command to start your preconfigured Kali Linux attacker machine... a second command to boot up your target machine... that's it! You can already start scanning for vulnerabilities!
+
+**Beginner-friendly challenges:** We've got various machines in rising levels of difficulty. Can you solve them all?
+
+**Cross-platform:** The setup works on Windows and Linux, so you can stay on you favorite operating system!
+
+Sound's interesting? Well, then just put on your hoodie and get started! Happy hacking!
 
 ## Prerequisites
 
@@ -56,6 +68,9 @@ Nevertheless, if a machine cannot be started or stopped and the error message is
 | | Machine name | Difficulty | Remarks |
 | --- | --- | --- | --- |
 |  | kali | - | Kali Linux attack machine |
-| ![aqua](logo/icons/aqua.svg) | aqua | very easy | |
+| ![aqua](logo/icons/aqua.svg) | aqua | easy | |
 | ![emerald](logo/icons/emerald.svg) | emerald | easy | |
 
+
+## Disclaimer
+> All challenges and demonstrated techniques are intended for educational purposes only. The author does not endorse any illegal actions.
