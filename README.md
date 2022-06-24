@@ -12,7 +12,7 @@ In other words: *It's just a typical CTF, isn't it?* Well, not completely! Here 
 
 **Beginner-friendly challenges:** We've got various machines in rising levels of difficulty. Can you solve them all?
 
-**Cross-platform:** The setup works on Windows and Linux, so there is no need to switch to another operating system!
+**Cross-platform:** The setup works on Windows and Linux, so you can stay on you favorite operating system!
 
 > **Disclaimer:** The challenges and demonstrated techniques are intended for educational purposes only. The author does not endorse any illegal actions.
 
