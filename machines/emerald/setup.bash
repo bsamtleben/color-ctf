@@ -10,7 +10,7 @@ USERNAME=clemence
 #   1. Install nginx and deploy static website containing unlisted directory with SSH key
 #   2. Set the SETUID bit on /bin/chown for privilege escalation
 
-# Create non-root user (without password since the user won't need to login)
+# Create non-root user (without password)
 useradd -m $USERNAME -s /bin/bash
 
 # Put the first token in the user's home directory
@@ -46,4 +46,4 @@ cp $FILES_DIR/default /etc/nginx/sites-available/default
 systemctl restart nginx
 
 # Set SETUID for chown executable
-sudo chmod u+s /bin/chown
+chmod u+s /bin/chown
