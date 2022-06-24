@@ -2,7 +2,15 @@
 
 ## About
 
-> TO BE DONE
+You would like to solve capture-the-flag challenges and don't know where to start? If that's the case, *Color CTF* might be something for you!
+
+**Beginner-friendly challenges:** We've got various machines of rising levels of difficulty. Can you solve them all?
+
+**Simple setup:** Manage everything in just a few steps: One command to start you Kali Linux attacker machine... a second command to start a vulnerable target... that's it! You can already start attacking your very first Linux machine!
+
+**Cross-platform:** The setup has been tested on Windows and Linux, so there is no need to switch to another operating system to get hacking!
+
+> **Disclaimer:** The challenges in this repository are provided for educational purposes only. The author does not endorse any illegal actions.
 
 ## Prerequisites
 
@@ -56,6 +64,6 @@ Nevertheless, if a machine cannot be started or stopped and the error message is
 | | Machine name | Difficulty | Remarks |
 | --- | --- | --- | --- |
 |  | kali | - | Kali Linux attack machine |
-| ![aqua](logo/icons/aqua.svg) | aqua | very easy | |
+| ![aqua](logo/icons/aqua.svg) | aqua | easy | |
 | ![emerald](logo/icons/emerald.svg) | emerald | easy | |
 
