@@ -8,7 +8,7 @@ We've assembled a collection of vulnerable Linux machines that you can try to ge
 
 In other words: *It's just a typical CTF, isn't it?* - Well, not completely! Here are some points that might convince you:
 
-**Self-contained and simple:** Everything requires just a few steps: One command to start your preconfigured Kali Linux attacker machine... a second command to boot up your target machine... that's it! You can already start scanning for vulnerabilities!
+**Self-contained and simple:** Everything requires very few steps: One command to start your preconfigured Kali Linux attacker machine... a second command to boot up your target machine... that's it! You can already start scanning for vulnerabilities!
 
 **Beginner-friendly challenges:** We've got various machines in rising levels of difficulty. Can you solve them all?
 
