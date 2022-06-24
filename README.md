@@ -71,6 +71,5 @@ Nevertheless, if a machine cannot be started or stopped and the error message is
 | ![aqua](logo/icons/aqua.svg) | aqua | easy | |
 | ![emerald](logo/icons/emerald.svg) | emerald | easy | |
 
----
 
-> **Disclaimer:** The challenges and demonstrated techniques are intended for educational purposes only. The author does not endorse any illegal actions.
+> **Disclaimer:** All challenges and demonstrated techniques are intended for educational purposes only. The author does not endorse any illegal actions.
