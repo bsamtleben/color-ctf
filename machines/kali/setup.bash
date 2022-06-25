@@ -5,8 +5,8 @@ HOME_DIR="/home/$USERNAME"
 # Update everything
 export DEBIAN_FRONTEND=noninteractive
 # Hold grub-pc package to prevent issues with non-interactive upgrade
-echo "grub-pc hold" | sudo dpkg --set-selections
-apt-get update && apt-get -y dist-upgrade && apt-get -y autoremove
+# echo "grub-pc hold" | sudo dpkg --set-selections
+# apt-get update && apt-get -y dist-upgrade && apt-get -y autoremove
 
 # Set correct keyboard layout
 KEYBOARD_FILE=/etc/default/keyboard
