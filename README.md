@@ -6,7 +6,7 @@ You would like to solve capture-the-flag challenges and don't know where to star
 
 We've assembled a collection of vulnerable Linux machines that you can try to take over. The task is always the same: Retrieve the two tokens hidden inside the machine. To find them, you will have to identify and exploit vulnerabilities until you finally gain root access.
 
-*So it's just a typical CTF, isn't it?* - Well, not completely! Here are some points that might convince you:
+*So it's just a normal CTF?* - Well, not completely! Here are some points that might convince you:
 
 - **Self-contained and simple:** Everything is automated to make things as easy as possible: One command to start your preconfigured Kali Linux attacker machine... a second command to boot up your target machine... that's it! You can already start scanning for vulnerabilities!
 
