@@ -54,7 +54,7 @@ Sounds interesting? Well, then just put on your hoodie and get started!
 
 - [Command reference](docs/commands.md)
 - [Troubleshooting](docs/troubleshooting.md)
-- [Walkthroughs](https://github.com/bsamtleben/color-ctf-walkthroughs)
+- [Hints & walkthroughs](https://github.com/bsamtleben/color-ctf-walkthroughs)
 
 ## Machines
 
