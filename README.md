@@ -18,7 +18,7 @@ We've assembled a collection of vulnerable Linux machines that you can try to ta
 
 - **Cross-platform:** The setup works on Windows and Linux, so there is no need to switch operating systems!
 
-- **Walkthroughs:** As Color CTF is intended for educational purposes, there are walkthroughs and hints available for all CTF machines. Feel free to check them out [here](https://github.com/bsamtleben/color-ctf-walkthroughs) if you get stuck and need hints!
+- **Walkthroughs:** As Color CTF is intended for educational purposes, there are walkthroughs and hints available for all CTF machines. Feel free to check them out [here](https://github.com/bsamtleben/color-ctf-walkthroughs) if you get stuck!
 
 Sounds interesting? Well, then just put on your hoodie and get started!
 
