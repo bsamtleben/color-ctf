@@ -6,19 +6,19 @@ You would like to solve capture-the-flag challenges and don't know where to star
 
 We've assembled a collection of vulnerable Linux machines that you can try to take over. The task is always the same: Retrieve the two tokens hidden inside the machine. To find them, you will have to identify and exploit vulnerabilities until you finally gain root access.
 
-"So it's just a typical CTF, isn't it?" - Well, not completely! Here are some points that might convince you:
+*So it's just a typical CTF, isn't it?* - Well, not completely! Here are some points that might convince you:
 
-**Self-contained and simple:** Everything requires very few steps: One command to start your preconfigured Kali Linux attacker machine... a second command to boot up your target machine... that's it! You can already start scanning for vulnerabilities!
+- **Self-contained and simple:** Everything requires very few steps: One command to start your preconfigured Kali Linux attacker machine... a second command to boot up your target machine... that's it! You can already start scanning for vulnerabilities!
 
-**Beginner-friendly:** There are various machines in rising levels of difficulty. Can you solve them all?
+- **Beginner-friendly:** There are various machines in rising levels of difficulty. Can you solve them all?
 
-**Unique challenges:** Even if the general objective is similar to other CTFs, the challenges are handcrafted and as unique as they can be!
+- **Unique challenges:** The objective might be similar to other CTFs, but the challenges are handcrafted and as unique as they could be!
 
-**Transparency:** After solving a particular machine, you can check out its setup script and see if you solved it in the intended way. Every step is fully transparent. You don't just randomly download binary images of virtual machines like in some other CTFs.
+- **Transparency:** After solving a particular machine, you can check out the setup script and see if you solved it as intended. Every setup is fully transparent. You don't just randomly download binary images of virtual machines like in some other CTFs.
 
-**Cross-platform:** The setup works on Windows and Linux, so there is no need to switch operating systems!
+- **Cross-platform:** The setup works on Windows and Linux, so there is no need to switch operating systems!
 
-Sounds interesting? Well, then just put on your hoodie and get ready!
+Sounds interesting? Well, then just put on your hoodie and get started!
 
 ## Prerequisites
 
