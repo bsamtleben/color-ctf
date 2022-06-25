@@ -14,9 +14,11 @@ We've assembled a collection of vulnerable Linux machines that you can try to ta
 
 - **Unique challenges:** The objective might be similar to other CTFs, but the challenges are handcrafted and as unique as they could be!
 
-- **Transparency:** After solving a particular machine, you can check out the setup script and see if you solved it as intended. Every setup is fully transparent. You don't just randomly download binary images of virtual machines like in some other CTFs.
+- **Transparency:** Every machine setup is fully transparent. You don't just randomly download binary images of virtual machines like in some other CTFs.
 
 - **Cross-platform:** The setup works on Windows and Linux, so there is no need to switch operating systems!
+
+- **Walkthroughs:** As Color CTF is intended for educational purposes, there are walkthroughs and hints available for all CTF machines. Feel free to check them out [here](https://github.com/bsamtleben/color-ctf-walkthroughs) if you get stuck and need hints!
 
 Sounds interesting? Well, then just put on your hoodie and get started!
 
@@ -48,24 +50,11 @@ Sounds interesting? Well, then just put on your hoodie and get started!
 
 > When you're done, make sure to stop both machines via `python3 color-ctf stop <machine>`.
 
-## Command reference
+## Further reading
 
-Run a command: `python3 color-ctf <command>`
-
-**Command list:**
-
-| Command | Explanation |
-| --- | --- |
-| `status` | List all machines, their status and IP address |
-| `start <machine>` | Start a machine |
-| `stop <machine>` | Stop a running machine |
-| `reset <machine>` | Reset a machine to its initial state |
-
-## Troubleshooting
-
-**Spoiler alert:** There is no debug output when the virtual machines are provisioned since this would provide a lot of information about the setup of the machines and could reveal how to solve them.
-
-Nevertheless, if a machine cannot be started or stopped and the error message is not helpful, you can check the log file stored at `machines/vagrant.log`. Just be aware that it might contain spoilers.
+- [Command reference](docs/commands.md)
+- [Troubleshooting](docs/troubleshooting.md)
+- [Walkthroughs](https://github.com/bsamtleben/color-ctf-walkthroughs)
 
 ## Machines
 
@@ -74,10 +63,6 @@ Nevertheless, if a machine cannot be started or stopped and the error message is
 |  | kali | - | Kali Linux attack machine |
 | ![aqua](logo/icons/aqua.svg) | aqua | easy | |
 | ![emerald](logo/icons/emerald.svg) | emerald | easy | |
-
-## Contribution
-
-If you would like to give feedback or improve a machine, please feel free to open an issue or pull request.
 
 ## Disclaimer
 > All challenges and demonstrated techniques are intended for educational purposes only. The author does not endorse any illegal actions.
