@@ -90,7 +90,7 @@ Vagrant.configure("2") do |config|
       m.vm.network "private_network", ip: machine.ip
 
       # General initialization for all machines
-      m.vm.provision "shell", path: "_general/setup.bash"
+      m.vm.provision "shell", path: "_general/pre.bash"
 
       # Copy needed files to host
       m.vm.provision "file", source: "#{machine.name}/files", destination: $FILES_DIR
@@ -100,6 +100,9 @@ Vagrant.configure("2") do |config|
 
       # Remove files
       m.vm.provision "shell", inline: "rm -r $1", args: $FILES_DIR
+
+      # Post initialization for all machines
+      m.vm.provision "shell", path: "_general/post.bash"
     end
 
   end
