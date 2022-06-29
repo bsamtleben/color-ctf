@@ -1,6 +1,6 @@
 ![COLOR CTF](logo/logo.svg)
 
-A beginner-friendly CTF environment with interesting challenges!
+**An educational CTF environment with interesting challenges**
 
 ## About
 
@@ -52,8 +52,8 @@ Sounds interesting? Well, then just put on your hoodie and get started!
 
 ## Further reading
 
-- [Command reference](docs/commands.md)
-- [Troubleshooting](docs/troubleshooting.md)
+- [Command reference](docs/commands.md) ⌨
+- [Troubleshooting](docs/troubleshooting.md) ❔
 - [Hints & walkthroughs](https://github.com/bsamtleben/color-ctf-walkthroughs) 💡
 
 ## Machines
