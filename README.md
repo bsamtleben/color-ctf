@@ -1,5 +1,7 @@
 ![COLOR CTF](logo/logo.svg)
 
+A beginner-friendly CTF environment with interesting challenges!
+
 ## About
 
 You would like to solve capture-the-flag challenges and don't know where to start? In that case, Color CTF might be something for you!
@@ -52,7 +54,7 @@ Sounds interesting? Well, then just put on your hoodie and get started!
 
 - [Command reference](docs/commands.md)
 - [Troubleshooting](docs/troubleshooting.md)
-- [Hints & walkthroughs](https://github.com/bsamtleben/color-ctf-walkthroughs)
+- [Hints & walkthroughs](https://github.com/bsamtleben/color-ctf-walkthroughs) 💡
 
 ## Machines
 
