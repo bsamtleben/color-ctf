@@ -63,6 +63,7 @@ Sounds interesting? Well, then just put on your hoodie and get started!
 |  | kali | - | Kali Linux attack machine |
 | ![aqua](logo/icons/aqua.svg) | aqua | easy | |
 | ![emerald](logo/icons/emerald.svg) | emerald | easy | |
+| ![cantaloupe](logo/icons/cantaloupe.svg) | cantaloupe | easy | |
 
 ## Disclaimer
 > All challenges and demonstrated techniques are intended for educational purposes only. The author does not endorse any illegal actions.
