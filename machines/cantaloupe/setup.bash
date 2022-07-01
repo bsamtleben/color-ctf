@@ -32,6 +32,7 @@ cp $FILES_DIR/ftp/vsftpd.conf /etc/vsftpd.conf
 mkdir -p /var/ftp
 cp -r $FILES_DIR/ftp/public /var/ftp/public
 chown -R nobody:nogroup /var/ftp/public
+chmod 644 /var/ftp/public/*
 
 # Enable and start vsftpd service
 systemctl restart vsftpd
