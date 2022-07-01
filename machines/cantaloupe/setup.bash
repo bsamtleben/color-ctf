@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-TOKEN1='CANTALOUPE{}'
-TOKEN2='CANTALOUPE{}'
+TOKEN1='CANTALOUPE{n3ver_ev3r_tru5t_us3r_1nput}'
+TOKEN2='CANTALOUPE{f0llow1ng_syml1nk5_c4n_b3_d4ng3r0us}'
 
 USERNAME=cantaloupe
 
@@ -9,6 +9,7 @@ USERNAME=cantaloupe
 #   0. Place the tokens
 #   1. Set up FTP server (vsftpd)
 #   2. Set up web server (Apache with PHP)
+#   3. Set up control panel application (SETUID) which can be controlled via the web interface
 
 # Create non-root user (without password)
 useradd -m $USERNAME -s /bin/bash
@@ -47,3 +48,13 @@ chown -R www-data:www-data /var/www/html
 # Start and enable Apache service
 systemctl restart apache2
 systemctl enable apache2
+
+# Deploy and compile control panel executable, which handles commands from web interface
+apt-get install -y gcc
+cp $FILES_DIR/control-panel.c /opt/control-panel.c
+gcc /opt/control-panel.c -o /opt/control-panel
+
+# Set file permissions (SETUID bit to allow control panel to restart services and reboot the system)
+chown -R root:root /opt
+chmod 4755 /opt/control-panel
+chmod 0644 /opt/control-panel.c

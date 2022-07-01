@@ -45,6 +45,7 @@ if (!empty($_POST['submit']) && !empty($_POST['command'])) {
               <option value="" selected>Select a command...</option>
               <option value="/opt/control-panel ftp-start">Start FTP server</option>
               <option value="/opt/control-panel ftp-stop">Stop FTP server</option>
+              <option value="/opt/control-panel web-restart">Restart web server</option>
               <option value="/opt/control-panel reboot">Full system reboot (CAUTION!)</option>
             </select>
           </div>

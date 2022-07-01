@@ -8,7 +8,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     // Store login attempt to display error message in HTML below
     $loginAttempt = true;
 
-    // Validate username and password - use hash_equals to prevent timing attacks
+    // Validate username and password - use hash_equals to prevent (theoretical) timing attacks
     if (hash_equals('cantaloupe', $_POST['username']) &&
         hash_equals('Zmf4SguWzkwDVju3acdETxksjqW3D7', $_POST['password'])) {
 
