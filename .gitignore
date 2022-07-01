@@ -1,2 +1,4 @@
 .vagrant
 vagrant.log
+*.swp
+*.kate-swp
