@@ -52,18 +52,18 @@ Sounds interesting? Well, then just put on your hoodie and get started!
 
 ## Further reading
 
-- [Command reference](docs/commands.md) ⌨
-- [Troubleshooting](docs/troubleshooting.md) ❔
+- [Command reference](docs/commands.md)
+- [Troubleshooting](docs/troubleshooting.md)
 - [Hints & walkthroughs](https://github.com/bsamtleben/color-ctf-walkthroughs) 💡
 
 ## Machines
 
 | | Machine name | Difficulty | Remarks |
 | --- | --- | --- | --- |
-|  | kali | - | Kali Linux attack machine |
-| ![aqua](logo/icons/aqua.svg) | aqua | easy | |
-| ![emerald](logo/icons/emerald.svg) | emerald | easy | |
-| ![cantaloupe](logo/icons/cantaloupe.svg) | cantaloupe | easy | |
+|  | kali | | Kali Linux attack machine |
+| ![aqua](logo/icons/aqua.svg) | aqua | ⭐ | |
+| ![emerald](logo/icons/emerald.svg) | emerald | ⭐ | |
+| ![cantaloupe](logo/icons/cantaloupe.svg) | cantaloupe | ⭐⭐ | |
 
 ## Disclaimer
 > All challenges and demonstrated techniques are intended for educational purposes only. The author does not endorse any illegal actions.
