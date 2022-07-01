@@ -1,5 +1,5 @@
 #include <string.h>
-#include <stdlib.h>
+#include <unistd.h>
 
 // CONTROL PANEL
 // This application can be used to start/stop/restart a limited number of services.
