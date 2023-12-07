@@ -9,6 +9,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     $loginAttempt = true;
 
     // Validate username and password - use hash_equals to prevent (theoretical) timing attacks
+    // Don't use hardcoded credentials at home... :)
     if (hash_equals('cantaloupe', $_POST['username']) &&
         hash_equals('Zmf4SguWzkwDVju3acdETxksjqW3D7', $_POST['password'])) {
 

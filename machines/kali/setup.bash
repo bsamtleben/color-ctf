@@ -4,9 +4,6 @@ HOME_DIR="/home/$USERNAME"
 
 # Update everything
 export DEBIAN_FRONTEND=noninteractive
-# Hold grub-pc package to prevent issues with non-interactive upgrade
-# echo "grub-pc hold" | sudo dpkg --set-selections
-# apt-get update && apt-get -y dist-upgrade && apt-get -y autoremove
 
 # Set correct keyboard layout
 KEYBOARD_FILE=/etc/default/keyboard
@@ -35,7 +32,7 @@ EOF
 echo 'source ~/.zshrc-custom' >> "$HOME_DIR/.zshrc"
 
 # Disable display timeout
-PERCHANNEL_DIR=/home/$USERNAME/.config/xfce4/xfconf/xfce-perchannel-xml
+PERCHANNEL_DIR=$HOME_DIR/.config/xfce4/xfconf/xfce-perchannel-xml
 mkdir -p $PERCHANNEL_DIR
 cat <<EOF > $PERCHANNEL_DIR/xfce4-power-manager.xml
 <?xml version="1.0" encoding="UTF-8"?>

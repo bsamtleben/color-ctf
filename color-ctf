@@ -74,8 +74,7 @@ def status():
 
     # Run vagrant global-status twice, first time with --prune (not cached, time-consuming)
     # Running it only once (with --prune) does not return the correct results when the machine
-    # was stopped externally (via VirtualBox UI or reboot).
-    # It seems quite weird to me - but at least there is this workaround...
+    # was stopped externally (via VirtualBox UI or reboot)...
 
     vagrant = subprocess.run(["vagrant", "global-status", "--prune"], capture_output=True, text=True)
     if vagrant.returncode != 0:
@@ -238,4 +237,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

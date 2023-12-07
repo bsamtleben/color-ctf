@@ -14,7 +14,7 @@ TOKEN2='AQUA{w0rld_wr1t4ble_f1l3z_c4n_be_h3lpful}'
 useradd -m "aqua" -s /bin/bash
 
 # Put the first token in the user's home directory
-HOME_DIR=/home/aqua/
+HOME_DIR=/home/aqua
 echo "Hello there! This one is for you: $TOKEN1" > $HOME_DIR/token
 chown -R aqua:aqua $HOME_DIR
 chmod 755 $HOME_DIR
@@ -24,7 +24,7 @@ chmod 644 $HOME_DIR/token
 echo "Nice job! Looks like you deserve this token: $TOKEN2" > /root/token
 
 # Apache HTTP server source code can be downloaded from here: https://httpd.apache.org/download.cgi
-HTTPD_VERSION=2.4.54
+HTTPD_VERSION=2.4.58
 
 # Install requirements for building Apache
 apt-get install -y  git curl libapr1-dev libaprutil1-dev build-essential libpcre3-dev
